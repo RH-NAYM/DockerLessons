@@ -1,11 +1,12 @@
+
 services:
     web-fe:
         build: .
         command: python main.py
         ports:
-          - 5000:5000
+          - 5001:5000
     
     redis:
-        image: "redis.alpine"
+        image: redis:alpine
         ports:
-            - 6379
+            - 6001:6000
