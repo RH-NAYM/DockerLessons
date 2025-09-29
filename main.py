@@ -1,8 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
-import os
 import uvicorn
+import os
 
 app = FastAPI(title="Rakib Testing")
 
@@ -21,8 +21,6 @@ def read_index():
 
     return HTMLResponse(html_content)
 
-
+# Only needed if you want to run locally
 if __name__ == "__main__":
-    host = os.getenv("HOST", "0.0.0.0")  # use 0.0.0.0 for Docker
-    port = int(os.getenv("PORT", "8080"))
-    uvicorn.run(app, host=host, port=port)
+    uvicorn.run(app, host="0.0.0.0", port=5000)
