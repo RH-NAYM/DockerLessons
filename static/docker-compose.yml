@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  unilever-ai:
+    build: .
+    ports:
+      - "5656:5656"
+    environment:
+      - NGROK_AUTHTOKEN=2lPN9d5cdnGlSrWb4JGEGVI1Mah_4bvvrGdKKU2ME7nkck8L7
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+    working_dir: /app
